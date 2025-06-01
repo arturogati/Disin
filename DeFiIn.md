@@ -156,29 +156,9 @@ graph LR
 
 ---
 
-## **7. Roadmap**  
-```mermaid
-gantt
-    title DeFi Pilot Roadmap
-    dateFormat  YYYY-MM-DD
-    section 2024
-    MVP Ethereum       :done, 2024-07-01, 2024-09-30
-    Solana Integration :active, 2024-10-01, 2024-12-31
-    section 2025
-    DAO Launch         :2025-01-01, 2025-03-31
-    Mobile App         :2025-04-01, 2025-06-30
-```
 
----
 
-## **8. Команда**  
-- **Blockchain Dev**: 5+ лет в DeFi.  
-- **Backend Dev**: Эксперт Python/Web3.  
-- **Product Lead**: Бывший PM в Coinbase.  
-
----
-
-## **9. Заключение**  
+## **Заключение**  
 **DeFi Pilot** устраняет главные барьеры для массового adoption DeFi:  
 🔹 **Простота** (1 клик вместо 10 шагов).  
 🔹 **Безопасность** (AI + аудиты).  
