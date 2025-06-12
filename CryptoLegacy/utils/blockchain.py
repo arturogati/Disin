@@ -1,3 +1,20 @@
+"""
+utils/blockchain.py
+Назначение: Работа с блокчейном через Web3.py.
+Что делает:
+
+Подключается к Ethereum через Infura API.
+
+Имитирует деплой контрактов (в тестах).
+Для чего нужен:
+
+Отправка реальных транзакций в mainnet/testnet.
+
+Абстракция для работы с разными сетями (Ethereum, TON и др.).
+
+
+"""
+
 from web3 import Web3
 import os
 from dotenv import load_dotenv
@@ -17,22 +34,15 @@ class Blockchain:
 
     def get_contract(self, address: str) -> CryptoWillContract:
         return self.contracts.get(address)
-    
 
+class MockBlockchain:
+    def __init__(self):
+        self.contracts = {}
 
-"""
-utils/blockchain.py
-Назначение: Работа с блокчейном через Web3.py.
-Что делает:
+    def deploy_contract(self, contract):
+        addr = f"0xMockContract{len(self.contracts)}"
+        self.contracts[addr] = contract
+        return addr
 
-Подключается к Ethereum через Infura API.
-
-Имитирует деплой контрактов (в тестах).
-Для чего нужен:
-
-Отправка реальных транзакций в mainnet/testnet.
-
-Абстракция для работы с разными сетями (Ethereum, TON и др.).
-
-
-"""
+    def get_contract(self, address):
+        return self.contracts.get(address)

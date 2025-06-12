@@ -1,3 +1,19 @@
+"""
+core/signatures.py
+Назначение: Криптографические операции с подписями.
+Что делает:
+
+sign_message: Подписывает сообщение приватным ключом (ECDSA).
+
+verify_signature: Проверяет, что подпись соответствует адресу.
+Для чего нужен:
+
+Безопасное подтверждение действий хранителей.
+
+Интеграция с Ethereum (алгоритм secp256k1).
+
+"""
+
 from eth_account import Account
 from eth_keys.datatypes import PrivateKey
 from web3 import Web3
@@ -22,20 +38,3 @@ def verify_signature(message: str, signature: str, expected_address: str) -> boo
         signature=signature
     )
     return address.lower() == expected_address.lower()
-
-
-"""
-core/signatures.py
-Назначение: Криптографические операции с подписями.
-Что делает:
-
-sign_message: Подписывает сообщение приватным ключом (ECDSA).
-
-verify_signature: Проверяет, что подпись соответствует адресу.
-Для чего нужен:
-
-Безопасное подтверждение действий хранителей.
-
-Интеграция с Ethereum (алгоритм secp256k1).
-
-"""

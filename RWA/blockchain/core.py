@@ -1,3 +1,28 @@
+"""
+Ответственность:
+Ядро симуляции блокчейна — управление бизнесами, инвесторами и базовыми операциями.
+
+Что делает:
+
+Содержит дата-классы для ключевых сущностей:
+
+Business — данные бизнеса (выручка, доля токенизации).
+
+Investor — информация об инвесторах (кошельки, токены).
+
+BusinessFinancials — финансовые показатели (аудит).
+
+BlockchainSimulator — класс для:
+
+Регистрации бизнесов (register_business).
+
+Добавления инвесторов (register_investor).
+
+Хранения состояния (словари businesses, investors).
+
+"""
+
+
 from dataclasses import dataclass
 from typing import Dict, List
 from uuid import uuid4
@@ -48,27 +73,3 @@ class BlockchainSimulator:
         )
         self.investors[investor.id] = investor
         return investor
-    
-"""
-Ответственность:
-Ядро симуляции блокчейна — управление бизнесами, инвесторами и базовыми операциями.
-
-Что делает:
-
-Содержит дата-классы для ключевых сущностей:
-
-Business — данные бизнеса (выручка, доля токенизации).
-
-Investor — информация об инвесторах (кошельки, токены).
-
-BusinessFinancials — финансовые показатели (аудит).
-
-BlockchainSimulator — класс для:
-
-Регистрации бизнесов (register_business).
-
-Добавления инвесторов (register_investor).
-
-Хранения состояния (словари businesses, investors).
-
-"""

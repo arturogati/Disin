@@ -1,3 +1,22 @@
+"""
+Ответственность:
+Проверка бизнеса перед токенизацией.
+
+Что делает:
+
+BusinessVerifier:
+
+Запрашивает данные через BankAPIClient и TaxAPIClient.
+
+Проверяет критерии:
+
+Стабильность выручки (нет резких скачков).
+
+Отсутствие налоговых долгов.
+
+Возвращает статус (APPROVED/REJECTED).
+"""
+
 from enum import Enum
 from .api_client import BankAPIClient, TaxAPIClient
 
@@ -22,23 +41,3 @@ class BusinessVerifier:
             "avg_revenue": avg_revenue,
             "tax_debts": tax_data["tax_debts"]
         }
-
-
-"""
-Ответственность:
-Проверка бизнеса перед токенизацией.
-
-Что делает:
-
-BusinessVerifier:
-
-Запрашивает данные через BankAPIClient и TaxAPIClient.
-
-Проверяет критерии:
-
-Стабильность выручки (нет резких скачков).
-
-Отсутствие налоговых долгов.
-
-Возвращает статус (APPROVED/REJECTED).
-"""
